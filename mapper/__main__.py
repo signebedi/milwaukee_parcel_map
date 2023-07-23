@@ -28,7 +28,7 @@ else:
 parcels_json = parcels.to_json()
 
 # Create a map centered at an approximate location in downtown Milwaukee
-m = folium.Map(location=[43.0389, -87.9065], zoom_start=13)
+m = folium.Map(location=[43.0389, -87.9065], tiles="cartodbpositron", zoom_start=13)
 
 # Add the parcel data to the map
 folium.GeoJson(parcels_json).add_to(m)
