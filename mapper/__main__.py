@@ -33,5 +33,9 @@ m = folium.Map(location=[43.0389, -87.9065], zoom_start=13)
 # Add the parcel data to the map
 folium.GeoJson(parcels_json).add_to(m)
 
+# Create output dir if it doesn't exist
+directory_name = 'output'
+os.makedirs(directory_name, exist_ok=True)
+
 # Save the map to a file
-m.save(f'{"dev_" if dev else ""}map.html')
+m.save(f'output/{"dev_" if dev else ""}map.html')
